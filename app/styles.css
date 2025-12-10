@@ -1,0 +1,265 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fafafa;
+  padding: 0;
+  margin: 0;
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  border-bottom: 1px solid #e0e0e0;
+  background-color: #fff;
+  justify-content: center;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #666;
+  font-weight: 500;
+  transition: color 0.2s;
+  position: relative;
+}
+
+.nav a:hover {
+  color: #333;
+}
+
+.nav a.active {
+  color: #333;
+}
+
+.nav a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #ff6b9d;
+  border-radius: 1px;
+}
+
+/* Container */
+.container {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+/* Intro Section */
+.intro {
+  margin-bottom: 3rem;
+}
+
+.intro h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.intro p {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.7;
+}
+
+/* Articles & Portfolio Lists */
+.articles h2,
+.portfolio h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #222;
+}
+
+.article-list,
+.portfolio-list {
+  list-style: none;
+}
+
+.article-list li,
+.portfolio-list li {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.article-list li:last-child,
+.portfolio-list li:last-child {
+  border-bottom: none;
+}
+
+.article-list a,
+.portfolio-list a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: transform 0.2s;
+}
+
+.article-list a:hover,
+.portfolio-list a:hover {
+  transform: translateX(4px);
+}
+
+.article-list h3,
+.portfolio-list h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.3rem;
+  color: #222;
+}
+
+.article-list time,
+.portfolio-list time {
+  font-size: 0.9rem;
+  color: #999;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.article-list p,
+.portfolio-list p {
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+.tags {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: #ff6b9d;
+  background-color: #ffe8f0;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  margin-bottom: 0.3rem;
+}
+
+/* Article & Portfolio Detail Pages */
+.article-page header,
+.portfolio-page header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.article-page h1,
+.portfolio-page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.article-page time,
+.portfolio-page time {
+  font-size: 0.95rem;
+  color: #999;
+  display: block;
+}
+
+/* Markdown Content */
+.markdown-content {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #444;
+}
+
+.markdown-content h1 {
+  font-size: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.markdown-content h2 {
+  font-size: 1.6rem;
+  margin-top: 1.8rem;
+  margin-bottom: 0.8rem;
+  color: #222;
+}
+
+.markdown-content h3 {
+  font-size: 1.3rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.7rem;
+  color: #222;
+}
+
+.markdown-content p {
+  margin-bottom: 1rem;
+}
+
+.markdown-content a {
+  color: #ff6b9d;
+  text-decoration: none;
+  border-bottom: 1px solid #ffc5d9;
+  transition: border-color 0.2s;
+}
+
+.markdown-content a:hover {
+  border-bottom-color: #ff6b9d;
+}
+
+.markdown-content ul,
+.markdown-content ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.markdown-content li {
+  margin-bottom: 0.5rem;
+}
+
+.markdown-content code {
+  background-color: #f5f5f5;
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-size: 0.9em;
+  font-family: 'Monaco', 'Courier New', monospace;
+}
+
+.markdown-content pre {
+  background-color: #f5f5f5;
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+
+.markdown-content pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+.markdown-content blockquote {
+  border-left: 3px solid #ff6b9d;
+  padding-left: 1rem;
+  margin-left: 0;
+  margin-bottom: 1rem;
+  color: #666;
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 2rem 1rem;
+  }
+
+  .intro h1 {
+    font-size: 2rem;
+  }
+
+  .article-page h1,
+  .portfolio-page h1 {
+    font-size: 2rem;
+  }
+}
