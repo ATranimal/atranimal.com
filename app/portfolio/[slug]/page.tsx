@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import { getPortfolioBySlug, getPortfolioItems } from "@/lib/markdown";
 
@@ -23,6 +24,18 @@ export default async function PortfolioItemPage({ params }: Props) {
 
   return (
     <article className="portfolio-page">
+      {item.image && (
+        <div className="portfolio-header-image">
+          <Image
+            src={item.image}
+            alt={item.title}
+            width={1200}
+            height={600}
+            style={{ width: "100%", height: "auto" }}
+            priority
+          />
+        </div>
+      )}
       <header>
         <h1>{item.title}</h1>
         {item.tags && <span className="tags">{item.tags}</span>}

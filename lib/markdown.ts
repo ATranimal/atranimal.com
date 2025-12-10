@@ -16,6 +16,7 @@ export interface PortfolioMetadata {
   date: string;
   description?: string;
   tags?: string;
+  image?: string;
   slug: string;
 }
 
@@ -91,6 +92,7 @@ export function getPortfolioItems(): PortfolioMetadata[] {
         date: data.date || "",
         description: data.description || "",
         tags: data.tags || "",
+        image: data.image || "",
       };
     });
 
@@ -114,6 +116,7 @@ export function getPortfolioBySlug(slug: string): Portfolio | null {
       date: data.date || "",
       description: data.description || "",
       tags: data.tags || "",
+      image: data.image || "",
       content,
     };
   } catch (error) {

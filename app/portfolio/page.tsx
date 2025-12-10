@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { getPortfolioItems } from "@/lib/markdown";
 
 export default function PortfolioPage() {
@@ -17,12 +18,25 @@ export default function PortfolioPage() {
         ) : (
           <ul className="portfolio-list">
             {portfolioItems.map((item) => (
-              <li key={item.slug}>
+              <li key={item.slug} className="portfolio-card">
                 <Link href={`/portfolio/${item.slug}`}>
-                  <h3>{item.title}</h3>
-                  {item.tags && <span className="tags">{item.tags}</span>}
-                  <time>{item.date}</time>
-                  {item.description && <p>{item.description}</p>}
+                  {item.image && (
+                    <div className="portfolio-card-image">
+                      <Image
+                        src={item.image}
+                        alt={item.title}
+                        width={800}
+                        height={400}
+                        style={{ width: "100%", height: "auto" }}
+                      />
+                    </div>
+                  )}
+                  <div className="portfolio-card-content">
+                    <h3>{item.title}</h3>
+                    {item.tags && <span className="tags">{item.tags}</span>}
+                    <time>{item.date}</time>
+                    {item.description && <p>{item.description}</p>}
+                  </div>
                 </Link>
               </li>
             ))}
