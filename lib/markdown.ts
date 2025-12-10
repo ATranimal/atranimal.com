@@ -14,6 +14,7 @@ export interface ArticleMetadata {
 export interface PortfolioMetadata {
   title: string;
   date: string;
+  displayDate?: string;
   description?: string;
   tags?: string;
   image?: string;
@@ -90,6 +91,7 @@ export function getPortfolioItems(): PortfolioMetadata[] {
         slug,
         title: data.title || slug,
         date: data.date || "",
+        displayDate: data["display-date"] || "",
         description: data.description || "",
         tags: data.tags || "",
         image: data.image || "",
@@ -114,6 +116,7 @@ export function getPortfolioBySlug(slug: string): Portfolio | null {
       slug,
       title: data.title || slug,
       date: data.date || "",
+      displayDate: data["display-date"] || "",
       description: data.description || "",
       tags: data.tags || "",
       image: data.image || "",

@@ -8,8 +8,7 @@ export default function PortfolioPage() {
   return (
     <div>
       <section className="intro">
-        <h1>Portfolio</h1>
-        <p>A collection of projects I've worked on.</p>
+        <p>the mish mash!</p>
       </section>
 
       <section className="portfolio">
@@ -34,7 +33,7 @@ export default function PortfolioPage() {
                   <div className="portfolio-card-content">
                     <h3>{item.title}</h3>
                     {item.tags && <span className="tags">{item.tags}</span>}
-                    <time>{item.date}</time>
+                    <time dateTime={item.date}>{item.displayDate || item.date}</time>
                     {item.description && <p>{item.description}</p>}
                   </div>
                 </Link>

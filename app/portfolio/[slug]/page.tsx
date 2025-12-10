@@ -39,7 +39,7 @@ export default async function PortfolioItemPage({ params }: Props) {
       <header>
         <h1>{item.title}</h1>
         {item.tags && <span className="tags">{item.tags}</span>}
-        <time>{item.date}</time>
+        <time dateTime={item.date}>{item.displayDate || item.date}</time>
       </header>
       <div className="markdown-content">
         <ReactMarkdown>{item.content}</ReactMarkdown>

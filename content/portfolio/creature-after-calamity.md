@@ -1,7 +1,8 @@
 ---
 title: "Creatures After Calamity"
-date: 2024/05/13
-description: "Polar bears, majestic predators of the Arctic, are facing unprecedented challenges due to climate change. These creatures, perfectly adapted to their icy habitat, are now struggling to survive as their environment rapidly changes."
+date: 2026/12/12
+display-date: coming 2026
+description: " Creatures After Calamity is an unsettling monster battler in which your animals remember how you treat them. Build a team and outsmart your opponents before your creatures turn on you."
 tags: "Game"
 image: "/images/cac-header.jpg"
 ---

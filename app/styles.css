@@ -32,8 +32,23 @@ body {
   line-height: 1.6;
   color: var(--color-text);
   background-color: var(--color-bg);
+  background-image: 
+    radial-gradient(circle, var(--color-lavender) 2px, transparent 2px),
+    radial-gradient(circle, var(--color-pink) 2px, transparent 2px);
+  background-size: 40px 40px, 40px 40px;
+  background-position: 0 0, 20px 20px;
+  animation: moveBackground 20s linear infinite;
   padding: 0;
   margin: 0;
+}
+
+@keyframes moveBackground {
+  0% {
+    background-position: 0 0, 20px 20px;
+  }
+  100% {
+    background-position: 34.64px 20px, 54.64px 40px;
+  }
 }
 
 /* Navigation */
@@ -132,12 +147,28 @@ body {
   border: var(--border-thick) solid var(--color-border);
   background-color: var(--color-card-bg);
   transition: all 0.2s;
+  position: relative;
 }
 
 .article-list li:hover {
   background-color: var(--color-pink);
+  background-image: 
+    radial-gradient(circle, var(--color-lavender) 1.5px, transparent 1.5px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.5) 1.5px, transparent 1.5px);
+  background-size: 30px 30px, 30px 30px;
+  background-position: 0 0, 15px 15px;
+  animation: moveCardBackground 15s linear infinite;
   transform: translateX(4px);
   box-shadow: 6px 6px 0 var(--color-brown);
+}
+
+@keyframes moveCardBackground {
+  0% {
+    background-position: 0 0, 15px 15px;
+  }
+  100% {
+    background-position: 25.98px 15px, 40.98px 30px;
+  }
 }
 
 .article-list li:last-child {
@@ -151,12 +182,22 @@ body {
   overflow: hidden;
   background-color: var(--color-card-bg);
   transition: all 0.2s;
+  position: relative;
 }
 
 .portfolio-card:hover {
   transform: translateY(-4px);
   box-shadow: 8px 8px 0 var(--color-brown);
+}
+
+.portfolio-card:hover .portfolio-card-content {
   background-color: var(--color-lavender);
+  background-image: 
+    radial-gradient(circle, var(--color-pink) 1.5px, transparent 1.5px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.5) 1.5px, transparent 1.5px);
+  background-size: 30px 30px, 30px 30px;
+  background-position: 0 0, 15px 15px;
+  animation: moveCardBackground 15s linear infinite;
 }
 
 .portfolio-card-image {
