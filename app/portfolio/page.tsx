@@ -33,7 +33,9 @@ export default function PortfolioPage() {
                   <div className="portfolio-card-content">
                     <h3>{item.title}</h3>
                     {item.tags && <span className="tags">{item.tags}</span>}
-                    <time dateTime={item.date}>{item.displayDate || item.date}</time>
+                    <time dateTime={item.date}>
+                      {item.displayDate || item.date}
+                    </time>
                     {item.description && <p>{item.description}</p>}
                   </div>
                 </Link>
