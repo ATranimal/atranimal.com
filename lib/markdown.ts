@@ -29,6 +29,22 @@ export interface Portfolio extends PortfolioMetadata {
   content: string;
 }
 
+export interface Heading {
+  level: number;
+  text: string;
+  id: string;
+}
+
+// Helper function to generate consistent IDs from heading text
+export function generateHeadingId(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-')
+    .trim();
+}
+
 export function getArticles(): ArticleMetadata[] {
   const articlesDirectory = path.join(contentDirectory, "articles");
   const filenames = fs.readdirSync(articlesDirectory);
@@ -73,6 +89,26 @@ export function getArticleBySlug(slug: string): Article | null {
   } catch (error) {
     return null;
   }
+}
+
+export function extractHeadings(markdown: string): Heading[] {
+  const headings: Heading[] = [];
+  // Split by any combination of \r\n, \n, or \r
+  const lines = markdown.split(/\r?\n/);
+  
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i].trim(); // Trim whitespace and carriage returns
+    const match = line.match(/^(#{1,6})\s+(.+)$/);
+    if (match) {
+      const level = match[1].length;
+      const text = match[2].trim();
+      const id = generateHeadingId(text);
+      
+      headings.push({ level, text, id });
+    }
+  }
+  
+  return headings;
 }
 
 export function getPortfolioItems(): PortfolioMetadata[] {
