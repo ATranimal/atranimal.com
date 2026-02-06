@@ -235,13 +235,14 @@ body::after {
 .portfolio-card-image {
   width: 100%;
   overflow: hidden;
-  aspect-ratio: 2 / 1;
   background-color: var(--color-mauve);
   border-bottom: var(--border-thick) solid var(--color-border);
 }
 
 .portfolio-card-image img {
-  object-fit: cover;
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .portfolio-card-content {
@@ -292,6 +293,12 @@ body::after {
   margin-bottom: 2rem;
   overflow: hidden;
   border: var(--border-thick) solid var(--color-border);
+}
+
+.portfolio-header-image img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* Table of Contents */

@@ -7,10 +7,6 @@ export default function PortfolioPage() {
 
   return (
     <div>
-      <section className="intro">
-        <p>the mish mash!</p>
-      </section>
-
       <section className="portfolio">
         {portfolioItems.length === 0 ? (
           <p>No portfolio items yet.</p>
@@ -24,8 +20,8 @@ export default function PortfolioPage() {
                       <Image
                         src={item.image}
                         alt={item.title}
-                        width={800}
-                        height={400}
+                        width={1200}
+                        height={600}
                         style={{ width: "100%", height: "auto" }}
                       />
                     </div>

@@ -18,6 +18,7 @@ export interface PortfolioMetadata {
   description?: string;
   tags?: string;
   image?: string;
+  order?: number;
   slug: string;
 }
 
@@ -131,12 +132,13 @@ export function getPortfolioItems(): PortfolioMetadata[] {
         description: data.description || "",
         tags: data.tags || "",
         image: data.image || "",
+        order: data.order ?? 999,
       };
     });
 
-  // Sort by date, most recent first
+  // Sort by order (lower number = first)
   items.sort((a, b) => {
-    return new Date(b.date).getTime() - new Date(a.date).getTime();
+    return (a.order ?? 999) - (b.order ?? 999);
   });
 
   return items;
