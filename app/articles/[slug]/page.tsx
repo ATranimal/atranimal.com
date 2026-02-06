@@ -60,7 +60,7 @@ export default async function ArticlePage({ params }: Props) {
         <ReactMarkdown
           components={{
             img: ({ src, alt }) => {
-              if (!src) return null;
+              if (!src || typeof src !== "string") return null;
 
               if (isVideoFile(src)) {
                 return (

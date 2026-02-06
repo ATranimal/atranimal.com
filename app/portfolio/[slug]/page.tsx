@@ -24,7 +24,7 @@ function getYouTubeVideoId(url: string): string | null {
 
 const markdownComponents: Components = {
   img: ({ src, alt }) => {
-    if (!src) return null;
+    if (!src || typeof src !== "string") return null;
 
     if (isVideoFile(src)) {
       return (
