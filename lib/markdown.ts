@@ -40,9 +40,9 @@ export interface Heading {
 export function generateHeadingId(text: string): string {
   return text
     .toLowerCase()
-    .replace(/[^a-z0-9\s-]/g, '')
-    .replace(/\s+/g, '-')
-    .replace(/-+/g, '-')
+    .replace(/[^a-z0-9\s-]/g, "")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-")
     .trim();
 }
 
@@ -96,7 +96,7 @@ export function extractHeadings(markdown: string): Heading[] {
   const headings: Heading[] = [];
   // Split by any combination of \r\n, \n, or \r
   const lines = markdown.split(/\r?\n/);
-  
+
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i].trim(); // Trim whitespace and carriage returns
     const match = line.match(/^(#{1,6})\s+(.+)$/);
@@ -104,11 +104,11 @@ export function extractHeadings(markdown: string): Heading[] {
       const level = match[1].length;
       const text = match[2].trim();
       const id = generateHeadingId(text);
-      
+
       headings.push({ level, text, id });
     }
   }
-  
+
   return headings;
 }
 
